@@ -4,206 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nanklis VPN | Защита и Скорость</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <style>
-        /* Базовые настройки */
+        :root {
+            --primary-red: #ff0000;
+            --dark-bg: #0a0a0a;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            background-color: #0a0a0a;
+            background-color: var(--dark-bg);
             color: white;
             font-family: 'Segoe UI', sans-serif;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* --- ПЕРВЫЙ ЭКРАН --- */
-        .hero-section {
+        /* Главная секция */
+        .hero {
+            height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            position: relative;
-        }
-
-        .main-card {
-            background: linear-gradient(145deg, #0f0f0f, #050505);
-            border: 1px solid #1a1a1a;
-            border-radius: 40px;
-            padding: 60px 40px;
             text-align: center;
-            box-shadow: 0 0 50px rgba(255, 0, 0, 0.1);
-            max-width: 600px;
-            width: 90%;
-            z-index: 2;
         }
 
-        /* АНИМИРОВАННЫЙ И СВЕТЯЩИЙСЯ ЗАГОЛОВОК */
+        .logo-n {
+            font-size: 150px;
+            font-weight: bold;
+            color: var(--primary-red);
+            text-shadow: 0 0 30px var(--primary-red);
+            margin-bottom: 10px;
+        }
+
         h1 {
-            font-size: clamp(40px, 8vw, 70px);
-            font-weight: 900;
+            font-size: 60px;
             margin: 0;
-            background: linear-gradient(to bottom, #ffffff, #ff0000);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-            animation: glowPulse 3s infinite alternate;
+            letter-spacing: 10px;
+            text-transform: uppercase;
         }
 
-        @keyframes glowPulse {
-            from { filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.4)); }
-            to { filter: drop-shadow(0 0 30px rgba(255, 0, 0, 0.8)); }
+        .subtitle {
+            color: #888;
+            font-size: 20px;
+            margin-bottom: 30px;
         }
 
-        /* ПУЛЬСИРУЮЩАЯ КНОПКА */
-        .btn-download {
-            display: inline-flex;
-            align-items: center;
-            margin-top: 40px;
-            padding: 22px 45px;
-            background-color: #ff0000;
+        .download-btn {
+            padding: 20px 60px;
+            font-size: 22px;
+            font-weight: bold;
             color: white;
             text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 20px;
+            border: 2px solid var(--primary-red);
+            border-radius: 50px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
             transition: 0.3s;
             text-transform: uppercase;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
-            animation: buttonPulse 2s infinite;
         }
 
-        @keyframes buttonPulse {
-            0% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); }
-            50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 0, 0, 0.7); }
-            100% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); }
+        .download-btn:hover {
+            background: var(--primary-red);
+            box-shadow: 0 0 40px var(--primary-red);
         }
 
-        .btn-download:hover {
-            background-color: #d60000;
-            filter: brightness(1.2);
-        }
-
-        .footer-text {
-            margin-top: 30px;
-            color: #444;
-            font-size: 12px;
-            letter-spacing: 3px;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-5px);}
-            60% {transform: translateY(-3px);}
-        }
-
-        /* --- ВТОРОЙ ЭКРАН (ИНФО) --- */
-        .info-section {
+        /* Секция с преимуществами (ВОССТАНОВЛЕНО) */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
             padding: 100px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
+            flex-wrap: wrap;
+            max-width: 1200px;
         }
 
-        h2 {
-            font-size: 42px;
+        .feature-card {
+            background: #151515;
+            padding: 30px;
+            border-radius: 20px;
+            width: 250px;
             text-align: center;
-            margin-bottom: 50px;
-            color: white;
-            text-transform: uppercase;
+            border: 1px solid #333;
+            transition: 0.3s;
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        /* СВЕТЯЩИЕСЯ КАРТОЧКИ ПРИ НАВЕДЕНИИ */
-        .feature-box {
-            background: #111;
-            padding: 40px;
-            border-radius: 30px;
-            border: 1px solid #222;
-            transition: all 0.5s ease;
-            opacity: 0;
-            transform: translateY(40px);
-            animation: reveal 1s forwards;
-        }
-
-        .feature-box:hover {
-            border-color: #ff0000;
-            box-shadow: 0 0 40px rgba(255, 0, 0, 0.3);
+        .feature-card:hover {
+            border-color: var(--primary-red);
             transform: translateY(-10px);
         }
 
-        .feature-box h3 {
-            color: #ff0000;
-            font-size: 24px;
-            margin-top: 0;
+        .feature-card h3 {
+            color: var(--primary-red);
+            margin-bottom: 15px;
         }
 
-        .feature-box p {
-            color: #888;
-            line-height: 1.7;
-            font-size: 16px;
-        }
-
-        /* АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ */
-        @keyframes reveal {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .feature-box:nth-child(1) { animation-delay: 0.2s; }
-        .feature-box:nth-child(2) { animation-delay: 0.4s; }
-        .feature-box:nth-child(3) { animation-delay: 0.6s; }
-
-        .copyright {
-            text-align: center;
-            padding: 50px;
-            color: #222;
+        .feature-card p {
+            color: #ccc;
             font-size: 14px;
         }
     </style>
 </head>
 <body>
 
-    <section class="hero-section">
-        <div class="main-card">
-            <h1>NANKLIS VPN</h1>
-            
-            <a href="Nanklis_VPN_Setup.exe" class="btn-download" download>
-                СКАЧАТЬ ДЛЯ WINDOWS
-            </a>
-
-            <div class="footer-text">ЛИСТАЙТЕ ВНИЗ</div>
-            <div style="color: #222; font-size: 10px; margin-top: 10px; letter-spacing: 2px;">WWW.NANKLIS.COM</div>
-        </div>
+    <section class="hero">
+        <div class="logo-n">N</div>
+        <h1>NANKLIS VPN</h1>
+        <p class="subtitle">Безопасность. Анонимность. Скорость.</p>
+        <a href="Nanklis_VPN_Setup.exe" class="download-btn">СКАЧАТЬ СЕЙЧАС</a>
     </section>
 
-    <section class="info-section">
-        <h2>ПОЧЕМУ NANKLIS?</h2>
-        
-        <div class="info-grid">
-            <div class="feature-box">
-                <h3>Абсолютная анонимность</h3>
-                <p>Мы используем технологию нулевого разглашения. Никаких логов, никакой истории посещений. Ваша приватность под надежным замком.</p>
-            </div>
-
-            <div class="feature-box">
-                <h3>Высокая скорость</h3>
-                <p>Забудьте о лагах. Наши серверы обеспечивают стабильную "высоту" соединения для стриминга и игр без задержек.</p>
-            </div>
-
-            <div class="feature-box">
-                <h3>Шифрование военного уровня</h3>
-                <p>Ваш трафик упакован в зашифрованный туннель AES-256. Это стандарт, который используют спецслужбы по всему миру.</p>
-            </div>
+    <section class="features">
+        <div class="feature-card">
+            <h3>Анонимность</h3>
+            <p>Ваш реальный IP-адрес будет скрыт, обеспечивая полную приватность в сети.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Скорость</h3>
+            <p>Высокоскоростные серверы позволяют играть и смотреть видео без задержек.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Безопасность</h3>
+            <p>Современные протоколы шифрования защитят ваши данные от злоумышленников.</p>
         </div>
     </section>
-
-    <div class="copyright">
-        © 2025 Nanklis Software. Все права защищены.
-    </div>
 
 </body>
 </html>
