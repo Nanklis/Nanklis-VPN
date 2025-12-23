@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nanklis VPN | Защита и Скорость</title>
+    
     <link rel="icon" type="image/png" href="favicon.png">
+    
+    <meta name="description" content="Nanklis VPN — надежный сервис для анонимности и обхода блокировок на Windows и Android.">
     
     <style>
         :root { 
@@ -17,30 +20,22 @@
             margin: 0; 
             background: var(--bg); 
             color: white; 
-            font-family: 'Segoe UI', sans-serif; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             scroll-behavior: smooth; 
             overflow-x: hidden; 
         }
-
-        /* АНИМАЦИИ */
+        
         @keyframes pulse {
-            0% { text-shadow: 0 0 20px var(--red); transform: scale(1); }
-            50% { text-shadow: 0 0 50px var(--red), 0 0 80px var(--red); transform: scale(1.05); }
-            100% { text-shadow: 0 0 20px var(--red); transform: scale(1); }
+            0% { text-shadow: 0 0 20px var(--red), 0 0 40px var(--red); transform: scale(1); }
+            50% { text-shadow: 0 0 40px var(--red), 0 0 70px var(--red), 0 0 100px var(--red); transform: scale(1.05); }
+            100% { text-shadow: 0 0 20px var(--red), 0 0 40px var(--red); transform: scale(1); }
         }
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease-out;
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ГЛАВНЫЙ ЭКРАН */
         .hero { 
             height: 100vh; 
             display: flex; 
@@ -48,134 +43,206 @@
             justify-content: center; 
             align-items: center; 
             text-align: center; 
+            padding: 0 20px;
         }
         
         .glow-n { 
-            font-size: 150px; 
+            font-size: clamp(120px, 20vw, 180px); 
             font-weight: bold; 
             color: var(--red); 
             animation: pulse 3s infinite ease-in-out;
-            margin: 0;
-            text-shadow: 0 0 30px var(--red);
+            margin: 0; 
+            line-height: 1; 
+            cursor: default;
         }
+
+        .fade-in { opacity: 0; animation: fadeUp 1s forwards; }
+        .delay-1 { animation-delay: 0.3s; }
+        .delay-2 { animation-delay: 0.6s; }
+        .delay-3 { animation-delay: 0.9s; }
 
         h1 { 
-            font-size: clamp(30px, 8vw, 50px); 
+            font-size: clamp(30px, 8vw, 60px); 
             letter-spacing: 10px; 
-            text-transform: uppercase;
-            text-shadow: 0 0 15px var(--red);
-            margin: 20px 0;
+            margin: 20px 0; 
+            text-transform: uppercase; 
         }
 
-        /* КНОПКИ */
-        .btn-group { display: flex; gap: 20px; margin-top: 30px; flex-wrap: wrap; justify-content: center; }
+        .desc { 
+            color: #888; 
+            margin-bottom: 40px; 
+            font-size: 18px; 
+            max-width: 650px; 
+        }
+
+        .btn-group { 
+            display: flex; 
+            gap: 20px; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+        }
+
         .btn { 
-            padding: 15px 40px; 
+            padding: 18px 40px; 
             border: 2px solid var(--red); 
             color: white; 
             text-decoration: none; 
             border-radius: 50px; 
             font-weight: bold; 
-            text-transform: uppercase;
-            box-shadow: 0 0 15px var(--red);
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            text-transform: uppercase; 
+            font-size: 14px;
         }
-        .btn:hover { background: var(--red); box-shadow: 0 0 40px var(--red); transform: scale(1.1); }
 
-        /* КОНТЕНТ С КРАСНЫМ СВЕЧЕНИЕМ */
-        .container { max-width: 900px; margin: 0 auto; padding: 50px 20px 100px; }
-        
+        .btn:hover { 
+            background: var(--red); 
+            box-shadow: 0 0 40px var(--red); 
+            transform: scale(1.1); 
+        }
+
+        .btn-alt { 
+            border-color: #fff; 
+        }
+
+        .btn-alt:hover {
+            border-color: var(--red);
+        }
+
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 80px 20px; 
+        }
+
         h2 { 
             color: var(--red); 
-            text-transform: uppercase; 
-            text-shadow: 0 0 20px var(--red);
+            border-left: 5px solid var(--red); 
+            padding-left: 20px; 
+            margin-bottom: 30px; 
             font-size: 28px;
-            margin: 60px 0 30px;
-            text-align: left;
-            border-left: 4px solid var(--red);
-            padding-left: 15px;
+            text-transform: uppercase;
         }
 
         .info-block { 
             background: var(--card); 
-            padding: 35px; 
+            padding: 40px; 
             border-radius: 20px; 
-            border: 1px solid var(--red);
-            box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.1), 0 0 20px rgba(255, 0, 0, 0.2);
             line-height: 1.8; 
-            margin-bottom: 30px;
+            margin-bottom: 50px; 
+            border: 1px solid #1f1f1f;
             transition: 0.3s;
         }
-        .info-block:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(255, 0, 0, 0.3); }
 
-        .step { margin-bottom: 20px; display: flex; align-items: flex-start; }
-        .step-num { 
-            color: var(--red); 
-            font-weight: bold; 
-            font-size: 22px; 
-            margin-right: 15px;
-            text-shadow: 0 0 10px var(--red);
-            min-width: 30px;
+        .info-block:hover { 
+            border-color: #333; 
+            transform: translateY(-5px); 
+        }
+        
+        .step { 
+            margin-bottom: 25px; 
+            display: flex; 
+            align-items: flex-start; 
         }
 
-        footer { text-align: center; padding: 60px; color: #444; border-top: 1px solid #111; font-size: 14px; }
+        .step-num { 
+            background: var(--red); 
+            color: black; 
+            font-weight: bold; 
+            min-width: 35px; 
+            height: 35px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-right: 20px; 
+            margin-top: 5px; 
+            box-shadow: 0 0 15px var(--red);
+            font-size: 18px;
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 60px; 
+            color: #333; 
+            font-size: 14px; 
+            border-top: 1px solid #111;
+        }
+
         strong { color: #fff; }
+
     </style>
 </head>
 <body>
 
     <section class="hero">
         <p class="glow-n">N</p>
-        <h1 class="reveal">NANKLIS VPN</h1>
-        <div class="btn-group reveal">
-            <a href="Nanklis_VPN_Setup.exe" class="btn">Windows</a>
-            <a href="Nanklis_VPN.apk" class="btn" style="border-color:#fff; box-shadow: 0 0 10px #fff;">Android</a>
+        <h1 class="fade-in delay-1">NANKLIS VPN</h1>
+        <p class="desc fade-in delay-2">
+            Максимальная приватность и неограниченный доступ. Мы шифруем ваш трафик, скрываем IP и обеспечиваем высокую скорость соединения в любой точке мира.
+        </p>
+        <div class="btn-group fade-in delay-3">
+            <a href="Nanklis_VPN_Setup.exe" class="btn">Скачать для Windows</a>
+            <a href="Nanklis_VPN.apk" class="btn btn-alt">Версия для Android</a>
         </div>
     </section>
 
-    <div class="container">
-        <section class="reveal">
-            <h2>О Nanklis VPN</h2>
+    <div class="container fade-in" style="animation-delay: 1.2s;">
+        
+        <section id="about">
+            <h2>О проекте Nanklis</h2>
             <div class="info-block">
-                <p><strong>Nanklis VPN</strong> — это мощный инструмент для обеспечения вашей цифровой независимости. Мы используем высокоскоростные протоколы, чтобы вы могли забыть о задержках и блокировках. Весь трафик проходит через зашифрованные туннели, исключая любую возможность слежки.</p>
+                <p>
+                    <strong>Nanklis VPN</strong> разработан для тех, кто ценит цифровую свободу. В отличие от других сервисов, мы не собираем логи ваших посещений и не ограничиваем пропускную способность канала. Наши серверы оптимизированы для минимального пинга в играх и быстрой загрузки потокового видео в 4K.
+                </p>
             </div>
         </section>
 
-        <section class="reveal">
-            <h2>Установка на Windows</h2>
-            <div class="info-block">
-                <div class="step"><span class="step-num">01</span> Нажмите кнопку <strong>Windows</strong> выше, чтобы скачать установщик.</div>
-                <div class="step"><span class="step-num">02</span> Запустите скачанный файл и подтвердите установку.</div>
-                <div class="step"><span class="step-num">03</span> Откройте приложение и активируйте защиту кнопкой в центре.</div>
-            </div>
-        </section>
-
-        <section class="reveal">
+        <section id="android-install">
             <h2>Установка на Android</h2>
             <div class="info-block">
-                <div class="step"><span class="step-num">01</span> Нажмите кнопку <strong>Android</strong> в начале страницы для загрузки <strong>.apk</strong> файла.</div>
-                <div class="step"><span class="step-num">02</span> Откройте файл. Если система запретит установку, перейдите в <strong>Настройки</strong> и разрешите "Установку из неизвестных источников".</div>
-                <div class="step"><span class="step-num">03</span> Завершите установку, запустите Nanklis VPN и наслаждайтесь анонимностью!</div>
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <div>Нажмите кнопку <strong>Android</strong> в начале страницы для загрузки <strong>.apk</strong> файла.</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <div>Откройте файл. Если система запретит установку, перейдите в <strong>Настройки</strong> и разрешите "Установку из неизвестных источников".</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <div>Перейдите в настройки телефона <strong>Приложения</strong> -> <strong>Nanklis VPN</strong> -> <strong>Батарея</strong> и выберите <strong>"Не ограничивать"</strong> или <strong>"Без ограничения"</strong>.</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">04</div>
+                    <div>Завершите установку, запустите <strong>Nanklis VPN</strong> и наслаждайтесь анонимностью!</div>
+                </div>
             </div>
         </section>
+
+        <section id="windows-install">
+            <h2>Как установить на Windows</h2>
+            <div class="info-block">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div>Скачайте инсталлятор <strong>Nanklis_VPN_Setup.exe</strong>, нажав кнопку в начале страницы.</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div>Запустите файл. Если система выдаст окно защиты, выберите <strong>"Подробнее"</strong>, а затем <strong>"Выполнить в любом случае"</strong>.</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div>После завершения установки откройте программу через ярлык на рабочем столе и нажмите заветную кнопку подключения.</div>
+                </div>
+            </div>
+        </section>
+
     </div>
 
-    <footer>&copy; 2025 Nanklis VPN Project. Свобода начинается здесь.</footer>
+    <footer>
+        &copy; 2025 Nanklis VPN Project. Все права защищены. <br>
+        Безопасность превыше всего.
+    </footer>
 
-    <script>
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal();
-    </script>
 </body>
 </html>
