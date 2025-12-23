@@ -77,7 +77,7 @@
             max-width: 650px; 
         }
 
-        /* КНОПКИ */
+        /* КНОПКИ СО СВЕЧЕНИЕМ ПРИ НАВЕДЕНИИ */
         .btn-group { 
             display: flex; 
             gap: 20px; 
@@ -99,7 +99,8 @@
 
         .btn:hover { 
             background: var(--red); 
-            box-shadow: 0 0 40px var(--red); 
+            /* СВЕЧЕНИЕ КНОПКИ */
+            box-shadow: 0 0 50px var(--red), 0 0 20px rgba(255, 0, 0, 0.6); 
             transform: scale(1.1); 
         }
 
@@ -111,7 +112,7 @@
             border-color: var(--red);
         }
 
-        /* КОНТЕНТ */
+        /* КОНТЕНТНАЯ ЧАСТЬ */
         .container { 
             max-width: 900px; 
             margin: 0 auto; 
@@ -125,10 +126,10 @@
             margin-bottom: 30px; 
             font-size: 28px;
             text-transform: uppercase;
-            /* КРАСНАЯ ПОДСВЕТКА ЗАГОЛОВКА */
-            text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
         }
 
+        /* БЛОКИ ИНФОРМАЦИИ СО СВЕЧЕНИЕМ ПРИ НАВЕДЕНИИ */
         .info-block { 
             background: var(--card); 
             padding: 40px; 
@@ -136,15 +137,18 @@
             line-height: 1.8; 
             margin-bottom: 50px; 
             border: 1px solid #1f1f1f;
-            transition: 0.3s;
+            transition: all 0.4s ease-in-out; /* Плавность для свечения */
         }
 
+        /* ТО САМОЕ КРАСНОЕ СВЕЧЕНИЕ ПРИ НАВЕДЕНИИ КУРСОРOM */
         .info-block:hover { 
-            border-color: #333; 
-            transform: translateY(-5px); 
+            border-color: var(--red); 
+            transform: translateY(-8px); 
+            /* Внешнее красное неоновое свечение */
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.4), inset 0 0 20px rgba(255, 0, 0, 0.05);
         }
         
-        /* ШАГИ С НЕОНОВОЙ ПОДСВЕТКОЙ */
+        /* НОМЕРА ШАГОВ С ПОСТОЯННЫМ СВЕЧЕНИЕМ */
         .step { 
             margin-bottom: 25px; 
             display: flex; 
@@ -163,7 +167,7 @@
             justify-content: center; 
             margin-right: 20px; 
             margin-top: 5px; 
-            /* ЯРКОЕ КРАСНОЕ СВЕЧЕНИЕ НОМЕРОВ */
+            /* ПОСТОЯННОЕ НЕОНОВОЕ СВЕЧЕНИЕ КРУЖКОВ */
             box-shadow: 0 0 15px var(--red), 0 0 30px var(--red); 
             text-shadow: 0 0 5px rgba(255,255,255,0.8);
             font-size: 18px;
