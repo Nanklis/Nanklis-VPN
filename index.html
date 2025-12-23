@@ -25,12 +25,14 @@
             overflow-x: hidden; 
         }
         
+        /* АНИМАЦИЯ ПУЛЬСАЦИИ ЛОГОТИПА */
         @keyframes pulse {
             0% { text-shadow: 0 0 20px var(--red), 0 0 40px var(--red); transform: scale(1); }
             50% { text-shadow: 0 0 40px var(--red), 0 0 70px var(--red), 0 0 100px var(--red); transform: scale(1.05); }
             100% { text-shadow: 0 0 20px var(--red), 0 0 40px var(--red); transform: scale(1); }
         }
 
+        /* АНИМАЦИЯ ПОЯВЛЕНИЯ */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
@@ -75,6 +77,7 @@
             max-width: 650px; 
         }
 
+        /* КНОПКИ */
         .btn-group { 
             display: flex; 
             gap: 20px; 
@@ -108,6 +111,7 @@
             border-color: var(--red);
         }
 
+        /* КОНТЕНТ */
         .container { 
             max-width: 900px; 
             margin: 0 auto; 
@@ -121,6 +125,8 @@
             margin-bottom: 30px; 
             font-size: 28px;
             text-transform: uppercase;
+            /* КРАСНАЯ ПОДСВЕТКА ЗАГОЛОВКА */
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
         }
 
         .info-block { 
@@ -138,6 +144,7 @@
             transform: translateY(-5px); 
         }
         
+        /* ШАГИ С НЕОНОВОЙ ПОДСВЕТКОЙ */
         .step { 
             margin-bottom: 25px; 
             display: flex; 
@@ -146,7 +153,7 @@
 
         .step-num { 
             background: var(--red); 
-            color: black; 
+            color: white; 
             font-weight: bold; 
             min-width: 35px; 
             height: 35px; 
@@ -156,7 +163,9 @@
             justify-content: center; 
             margin-right: 20px; 
             margin-top: 5px; 
-            box-shadow: 0 0 15px var(--red);
+            /* ЯРКОЕ КРАСНОЕ СВЕЧЕНИЕ НОМЕРОВ */
+            box-shadow: 0 0 15px var(--red), 0 0 30px var(--red); 
+            text-shadow: 0 0 5px rgba(255,255,255,0.8);
             font-size: 18px;
         }
 
@@ -198,7 +207,7 @@
         </section>
 
         <section id="android-install">
-            <h2>Установка на Android</h2>
+            <h2>УСТАНОВКА НА ANDROID</h2>
             <div class="info-block">
                 <div class="step">
                     <div class="step-num">01</div>
@@ -220,7 +229,7 @@
         </section>
 
         <section id="windows-install">
-            <h2>Как установить на Windows</h2>
+            <h2>КАК УСТАНОВИТЬ НА WINDOWS</h2>
             <div class="info-block">
                 <div class="step">
                     <div class="step-num">1</div>
