@@ -107,6 +107,28 @@
             transform: translateY(-5px);
         }
 
+        .description-text {
+            color: #cccccc;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .description-text b {
+            color: #ff0000;
+        }
+
+        .feature-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-dot {
+            color: #ff0000;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
         .step {
             display: flex;
             align-items: flex-start;
@@ -133,8 +155,6 @@
             line-height: 1.5;
             color: #cccccc;
         }
-
-        b { color: #ffffff; }
     </style>
 </head>
 <body>
@@ -152,31 +172,44 @@
     </div>
 
     <div class="container">
-        <h1>СКАЧАТЬ НА ANDROID</h1>
+        
+        <h1>О ПРИЛОЖЕНИИ</h1>
         <div class="card">
-            <div class="step">
-                <div class="step-number">01</div>
-                <div class="step-text">Скачайте файл <b>Nanklis VPN.apk</b>.</div>
-            </div>
-            <div class="step">
-                <div class="step-number">02</div>
-                <div class="step-text">Разрешите установку из <b>неизвестных источников</b>.</div>
-            </div>
-            <div class="step">
-                <div class="step-number">03</div>
-                <div class="step-text">В настройках батареи выберите <b>"Без ограничений"</b>.</div>
-            </div>
-            <div class="step">
-                <div class="step-number">04</div>
-                <div class="step-text">Запустите и наслаждайтесь анонимностью!</div>
+            <div class="description-text">
+                <b>Nanklis VPN</b> — это современное решение для тех, кто ценит свою свободу и конфиденциальность в сети. Мы используем передовые протоколы, чтобы обеспечить вам быстрый и безопасный доступ к любому ресурсу.
+                <br><br>
+                <div class="feature-item"><span class="feature-dot">●</span> <b>Абсолютная анонимность:</b> скрываем ваш IP и не храним историю посещений.</div>
+                <div class="feature-item"><span class="feature-dot">●</span> <b>Безграничный доступ:</b> забудьте о блокировках и цензуре в один клик.</div>
+                <div class="feature-item"><span class="feature-dot">●</span> <b>Высокая скорость:</b> наши сервера оптимизированы для HD-видео и онлайн-игр.</div>
+                <div class="feature-item"><span class="feature-dot">●</span> <b>Надежная защита:</b> трафик зашифрован по стандарту AES-256.</div>
             </div>
         </div>
 
-        <h1>СКАЧАТЬ НА WINDOWS</h1>
+        <h1>УСТАНОВКА НА ANDROID</h1>
+        <div class="card">
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="step-text">Нажмите на кнопку <b>Android</b> выше и скачайте файл <b>Nanklis VPN.apk</b>.</div>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="step-text">Откройте файл. Разрешите <b>"Установку из неизвестных источников"</b> в настройках телефона.</div>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <div class="step-text">Для стабильной связи в настройках батареи выберите <b>"Без ограничений"</b>.</div>
+            </div>
+            <div class="step">
+                <div class="step-number">04</div>
+                <div class="step-text">Запустите приложение и наслаждайтесь анонимностью!</div>
+            </div>
+        </div>
+
+        <h1>УСТАНОВКА НА WINDOWS</h1>
         <div class="card">
             <div class="step">
                 <div class="step-number">1</div>
-                <div class="step-text">Запустите <b>Nanklis_VPN_Setup.exe</b> и следуйте шагам.</div>
+                <div class="step-text">Скачайте и запустите <b>Nanklis_VPN_Setup.exe</b>, затем следуйте подсказкам.</div>
             </div>
         </div>
     </div>
