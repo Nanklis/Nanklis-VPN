@@ -25,7 +25,7 @@
             margin-bottom: 40px;
         }
 
-        /* Большая буква N с отложенным свечением */
+        /* Большая центральная буква N с задержкой свечения */
         .big-n {
             font-size: 180px;
             font-weight: 900;
@@ -35,13 +35,17 @@
             animation: glowDelay 5s forwards;
         }
 
+        /* Заголовок: Nanklis (красный), VPN (белый) */
         .sub-logo-text {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
             letter-spacing: 12px;
             text-transform: uppercase;
             margin-top: 20px;
         }
+
+        .red-word { color: #ff0000; }
+        .white-word { color: #ffffff; }
 
         @keyframes glowDelay {
             0% { text-shadow: none; }
@@ -49,7 +53,7 @@
             100% { text-shadow: 0 0 30px #ff0000, 0 0 60px #ff0000; }
         }
 
-        /* Кнопки скачивания в стиле капсул */
+        /* Кнопки скачивания */
         .download-header {
             display: flex;
             gap: 25px;
@@ -61,7 +65,7 @@
         .btn {
             text-decoration: none;
             color: white;
-            padding: 12px 45px;
+            padding: 14px 50px;
             border-radius: 50px;
             font-weight: bold;
             font-size: 16px;
@@ -82,7 +86,7 @@
             width: 100%;
         }
 
-        /* Красные заголовки с линией слева */
+        /* Заголовки разделов */
         h1 {
             color: #ff0000;
             font-size: 26px;
@@ -102,7 +106,7 @@
             transition: all 0.4s ease;
         }
 
-        /* Свечение карточки при наведении */
+        /* Свечение карточки при наведении мышки */
         .card:hover {
             border-color: #ff0000;
             box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
@@ -115,7 +119,7 @@
             margin-bottom: 25px;
         }
 
-        /* Светящиеся красные номера шагов */
+        /* Светящиеся номера */
         .step-number {
             background-color: #ff0000;
             color: #000;
@@ -144,7 +148,9 @@
 
     <div class="hero-section">
         <span class="big-n">N</span>
-        <div class="sub-logo-text">NANKLIS VPN</div>
+        <div class="sub-logo-text">
+            <span class="red-word">Nanklis</span> <span class="white-word">VPN</span>
+        </div>
     </div>
 
     <div class="download-header">
@@ -159,7 +165,7 @@
         <div class="card">
             <div class="step">
                 <div class="step-number">01</div>
-                <div class="step-text">Скачайте <b>.apk</b> файл.</div>
+                <div class="step-text">Скачайте <b>.apk</b> файл для вашего устройства.</div>
             </div>
 
             <div class="step">
@@ -169,12 +175,12 @@
 
             <div class="step">
                 <div class="step-number">03</div>
-                <div class="step-text">В настройках батареи для приложения выберите режим <b>"Без ограничений"</b>.</div>
+                <div class="step-text">В настройках батареи выберите режим <b>"Без ограничений"</b> для стабильной работы.</div>
             </div>
 
             <div class="step">
                 <div class="step-number">04</div>
-                <div class="step-text">Запустите <b>Nanklis VPN</b> и наслаждайтесь анонимностью!</div>
+                <div class="step-text">Запустите <b>Nanklis VPN</b> и наслаждайтесь свободой интернета!</div>
             </div>
         </div>
 
@@ -183,7 +189,7 @@
         <div class="card">
             <div class="step">
                 <div class="step-number">1</div>
-                <div class="step-text">Скачайте инсталлятор и следуйте шагам установки.</div>
+                <div class="step-text">Запустите скачанный инсталлятор и следуйте простым шагам на экране.</div>
             </div>
         </div>
 
