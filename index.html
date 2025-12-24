@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nanklis Download </title>
     <style>
-        /* Твой оригинальный стиль: черный фон и красные акценты */
         body {
             margin: 0;
             padding: 0;
             background-color: black;
             color: white;
-            font-family: 'Arial Black', Gadget, sans-serif;
+            font-family: 'Arial Black', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -20,58 +19,38 @@
         }
 
         .logo {
-            font-size: 60px;
-            letter-spacing: 10px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
+            font-size: 64px;
+            letter-spacing: 5px;
+            margin-bottom: 40px;
         }
 
         .red {
             color: red;
         }
 
-        .description {
-            font-size: 18px;
-            color: #888;
-            margin-bottom: 50px;
-            letter-spacing: 2px;
-        }
-
-        /* Твоя большая красная кнопка */
-        .download-btn {
+        .btn {
             background-color: red;
             color: white;
-            padding: 25px 60px;
-            font-size: 22px;
+            padding: 20px 50px;
+            font-size: 24px;
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
-            border: 3px solid white;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+            border: 2px solid white;
+            transition: 0.3s;
         }
 
-        .download-btn:hover {
+        .btn:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 40px rgba(255, 0, 0, 0.7);
-        }
-
-        footer {
-            position: absolute;
-            bottom: 30px;
-            color: #333;
-            font-size: 12px;
+            box-shadow: 0 0 20px red;
         }
     </style>
 </head>
 <body>
 
     <div class="logo">NANKLIS <span class="red">VPN</span></div>
-    <div class="description">БЫСТРЫЙ • БЕЗОПАСНЫЙ • ТВОЙ</div>
 
-    <a href="app-debug.apk" class="download-btn">СКАЧАТЬ APK</a>
-
-    <footer>&copy; 2025 NANKLIS TEAM</footer>
+    <a href="app-debug.apk" class="btn">СКАЧАТЬ</a>
 
 </body>
 </html>
