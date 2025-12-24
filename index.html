@@ -3,54 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nanklis Download </title>
+    <title>NANKLIS VPN | ИНСТРУКЦИЯ</title>
     <style>
         body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: black;
-            color: white;
-            font-family: 'Arial Black', sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #ff0000;
+            font-size: 28px;
+            text-transform: uppercase;
+            border-left: 5px solid #ff0000;
+            padding-left: 15px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background-color: #111111;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 20px;
+            border: 1px solid #222;
+        }
+
+        .step {
             display: flex;
-            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .step-number {
+            background-color: #ff0000;
+            color: #000;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-        }
-
-        .logo {
-            font-size: 64px;
-            letter-spacing: 5px;
-            margin-bottom: 40px;
-        }
-
-        .red {
-            color: red;
-        }
-
-        .btn {
-            background-color: red;
-            color: white;
-            padding: 20px 50px;
-            font-size: 24px;
             font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            border: 2px solid white;
-            transition: 0.3s;
+            margin-right: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
         }
 
-        .btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 20px red;
+        .step-text {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        b {
+            color: #ffffff;
+        }
+
+        .red-text {
+            color: #ff0000;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <div class="logo">NANKLIS <span class="red">VPN</span></div>
+<div class="container">
+    
+    <h1>УСТАНОВКА НА ANDROID</h1>
+    
+    <div class="card">
+        <div class="step">
+            <div class="step-number">01</div>
+            <div class="step-text">Нажмите кнопку <b>Android</b> в начале страницы для загрузки <b>.apk</b> файла.</div>
+        </div>
 
-    <a href="app-debug.apk" class="btn">СКАЧАТЬ</a>
+        <div class="step">
+            <div class="step-number">02</div>
+            <div class="step-text">Откройте файл. Если система запретит установку, перейдите в <b>Настройки</b> и разрешите "Установку из неизвестных источников".</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">03</div>
+            <div class="step-text">Перейдите в настройки телефона <b>Приложения -> Nanklis VPN -> Батарея</b> и выберите <b>"Не ограничивать"</b> или <b>"Без ограничения"</b>.</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">04</div>
+            <div class="step-text">Завершите установку, запустите <b>Nanklis VPN</b> и наслаждайтесь анонимностью!</div>
+        </div>
+    </div>
+
+    <h1>КАК УСТАНОВИТЬ НА WINDOWS</h1>
+    
+    <div class="card">
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-text">Скачайте инсталлятор <b>Nanklis_VPN_Setup.exe</b>, нажав кнопку в начале страницы.</div>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
