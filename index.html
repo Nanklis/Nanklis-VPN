@@ -2,72 +2,76 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Nankli Download </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanklis Download </title>
     <style>
-        body { background-color: black; color: white; text-align: center; font-family: 'Arial', sans-serif; margin: 0; padding: 20px; }
-        .logo { font-size: 50px; font-weight: bold; margin-top: 50px; letter-spacing: 5px; }
-        .red { color: red; }
-        
-        /* Кнопка скачивания */
-        .download-btn { 
-            display: inline-block;
-            background-color: red; 
-            color: white; 
-            padding: 25px 50px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 20px;
-            border-radius: 50px; 
-            border: 3px solid white;
-            margin: 40px 0;
-            transition: 0.3s;
+        /* Твой оригинальный стиль: черный фон и красные акценты */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-family: 'Arial Black', Gadget, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
-        .download-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px red; }
 
-        /* Блок инструкций */
-        .instructions { max-width: 800px; margin: 40px auto; text-align: left; background: #111; padding: 30px; border-radius: 20px; border: 1px solid #333; }
-        .instructions h2 { color: red; text-align: center; border-bottom: 1px solid red; padding-bottom: 10px; }
-        .step { margin-bottom: 20px; }
-        .step-title { font-weight: bold; color: red; font-size: 18px; }
+        .logo {
+            font-size: 60px;
+            letter-spacing: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
 
-        /* Чат в самом низу */
-        #chat-section { margin-top: 80px; padding-bottom: 50px; }
+        .red {
+            color: red;
+        }
+
+        .description {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+        }
+
+        /* Твоя большая красная кнопка */
+        .download-btn {
+            background-color: red;
+            color: white;
+            padding: 25px 60px;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 3px solid white;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+        }
+
+        .download-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.7);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 30px;
+            color: #333;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
 
     <div class="logo">NANKLIS <span class="red">VPN</span></div>
+    <div class="description">БЫСТРЫЙ • БЕЗОПАСНЫЙ • ТВОЙ</div>
 
-    <a href="app-debug.apk" class="download-btn">СКАЧАТЬ ДЛЯ ANDROID (.APK)</a>
+    <a href="app-debug.apk" class="download-btn">СКАЧАТЬ APK</a>
 
-    <div class="instructions">
-        <h2>ИНСТРУКЦИЯ ПО УСТАНОВКЕ</h2>
-        
-        <div class="step">
-            <div class="step-title"> ДЛЯ ANDROID:</div>
-            <p>1. Нажмите на красную кнопку выше и скачайте файл <b>app-debug.apk</b>.</p>
-            <p>2. Откройте скачанный файл на телефоне.</p>
-            <p>3. Если появится окно "Блокировка установки", нажмите "Настройки" и разрешите "Установку из неизвестных источников".</p>
-            <p>4. Нажмите "Установить" и запустите приложение.</p>
-        </div>
-
-        <div class="step">
-            <div class="step-title"> ДЛЯ WINDOWS:</div>
-            <p>На данный момент прямая версия для Windows находится в разработке. Чтобы использовать Nanklis VPN на ПК сейчас:</p>
-            <p>1. Скачайте эмулятор Android (например, <b>BlueStacks</b> или <b>NoxPlayer</b>).</p>
-            <p>2. Перетащите скачанный файл <b>app-debug.apk</b> в окно эмулятора.</p>
-            <p>3. Запустите VPN внутри эмулятора.</p>
-        </div>
-    </div>
-
-    <div id="chat-section">
-        <h2 class="red">ЧАТ СООБЩЕСТВА</h2>
-        <div style="max-width: 900px; margin: 0 auto; border: 2px solid red; border-radius: 15px; overflow: hidden;">
-            <iframe src="https://deadsimplechat.com/W8PjMorbA" width="100%" height="500px" frameborder="0"></iframe>
-        </div>
-    </div>
-
-    <footer style="color: #444; margin-top: 50px;">&copy; 2025 NANKLIS VPN</footer>
+    <footer>&copy; 2025 NANKLIS TEAM</footer>
 
 </body>
 </html>
