@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nanklis VPN Download </title>
+    <title>Nanklis VPN Download</title>
     
     <link rel="icon" href="favicon.png" type="image/png">
 
@@ -21,43 +21,26 @@
 
         .hero-section {
             text-align: center;
-            margin-top: 40px;
-            margin-bottom: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin-top: 60px;
+            margin-bottom: 40px;
         }
 
-        /* Твоя иконка favicon.png с эффектом свечения */
-        .site-icon {
-            width: 100px; /* Размер иконки */
-            height: 100px;
-            margin-bottom: 10px;
-            filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.6));
-            animation: iconFade 3s ease-in;
-        }
-
-        @keyframes iconFade {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
+        /* Большая буква N с отложенным свечением */
         .big-n {
-            font-size: 160px;
+            font-size: 180px;
             font-weight: 900;
             color: #ff0000;
-            line-height: 0.9;
+            line-height: 0.8;
             display: block;
-            /* Появление свечения через 5 секунд */
             animation: glowDelay 5s forwards;
         }
 
         .sub-logo-text {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: bold;
-            letter-spacing: 10px;
+            letter-spacing: 12px;
             text-transform: uppercase;
-            margin-top: 5px;
+            margin-top: 20px;
         }
 
         @keyframes glowDelay {
@@ -66,10 +49,10 @@
             100% { text-shadow: 0 0 30px #ff0000, 0 0 60px #ff0000; }
         }
 
-        /* Кнопки скачивания */
+        /* Кнопки скачивания в стиле капсул */
         .download-header {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             margin: 40px 0;
             flex-wrap: wrap;
             justify-content: center;
@@ -78,14 +61,14 @@
         .btn {
             text-decoration: none;
             color: white;
-            padding: 15px 45px;
+            padding: 12px 45px;
             border-radius: 50px;
             font-weight: bold;
+            font-size: 16px;
             border: 2px solid #ff0000;
             background: transparent;
             transition: 0.3s;
             text-transform: uppercase;
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
         }
 
         .btn:hover {
@@ -99,19 +82,19 @@
             width: 100%;
         }
 
+        /* Красные заголовки с линией слева */
         h1 {
             color: #ff0000;
             font-size: 26px;
             text-transform: uppercase;
             border-left: 5px solid #ff0000;
             padding-left: 15px;
-            margin-top: 50px;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+            margin-top: 60px;
         }
 
-        /* Карточки инструкций со свечением при наведении */
+        /* Карточки инструкций */
         .card {
-            background-color: #0a0a0a;
+            background-color: #0d0d0d;
             border-radius: 20px;
             padding: 35px;
             margin-top: 20px;
@@ -119,6 +102,7 @@
             transition: all 0.4s ease;
         }
 
+        /* Свечение карточки при наведении */
         .card:hover {
             border-color: #ff0000;
             box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
@@ -131,6 +115,7 @@
             margin-bottom: 25px;
         }
 
+        /* Светящиеся красные номера шагов */
         .step-number {
             background-color: #ff0000;
             color: #000;
@@ -158,7 +143,6 @@
 <body>
 
     <div class="hero-section">
-        <img src="favicon.png" alt="Nanklis Icon" class="site-icon">
         <span class="big-n">N</span>
         <div class="sub-logo-text">NANKLIS VPN</div>
     </div>
@@ -180,34 +164,30 @@
 
             <div class="step">
                 <div class="step-number">02</div>
-                <div class="step-text">Разрешите "Установку из неизвестных источников" в настройках.</div>
+                <div class="step-text">Откройте файл и разрешите установку из <b>неизвестных источников</b>.</div>
             </div>
 
             <div class="step">
                 <div class="step-number">03</div>
-                <div class="step-text">В настройках батареи выберите <b>"Без ограничений"</b>.</div>
+                <div class="step-text">В настройках батареи для приложения выберите режим <b>"Без ограничений"</b>.</div>
             </div>
 
             <div class="step">
                 <div class="step-number">04</div>
-                <div class="step-text">Запустите <b>Nanklis VPN</b> и пользуйтесь бесплатно!</div>
+                <div class="step-text">Запустите <b>Nanklis VPN</b> и наслаждайтесь анонимностью!</div>
             </div>
         </div>
 
-        <h1>УСТАНОВКА НА WINDOWS</h1>
+        <h1>КАК УСТАНОВИТЬ НА WINDOWS</h1>
         
         <div class="card">
             <div class="step">
                 <div class="step-number">1</div>
-                <div class="step-text">Запустите <b>Nanklis_VPN_Setup.exe</b> и завершите установку.</div>
+                <div class="step-text">Скачайте инсталлятор и следуйте шагам установки.</div>
             </div>
         </div>
 
     </div>
-
-    <footer style="margin: 50px 0; color: #333; font-size: 12px;">
-        &copy; 2025 NANKLIS VPN. BUILD SUCCESSFUL.
-    </footer>
 
 </body>
 </html>
